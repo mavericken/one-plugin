@@ -16,6 +16,9 @@
     "one-plugin",
     "jspm"
   ],
+  "files": [
+	"index.js"
+  ]
   "author": "Rick Velde",
   "license": "MIT",
   "bugs": {
