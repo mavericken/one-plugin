@@ -31,12 +31,17 @@ function fetch(load, systemFetch) {
     prepend(oneOptions, loader.oneOptions);
 
   prepend(oneOptions, oneOptions);
-
+  var addressWithoutDotOne = load.address.replace(/\.one$/,"")
+    console.log("checking...", oneOptions.extensions)
     if(oneOptions.extensions.some(function(extension){
-        return load.address.endsWith(extension);
-    })) return systemFetch.call(this,load);
+        console.log("checking...", addressWithoutDotOne, extension, addressWithoutDotOne.endsWith(extension))
+        return addressWithoutDotOne.endsWith(extension);
+    })) {
+        load.address = addressWithoutDotOne
+        return systemFetch.call(this,load);
+    }
     else {
-        var addressWithoutDotOne = load.address.replace(/\.one$/,"")
+        
         var result = findFirstValidAddress(addressWithoutDotOne,oneOptions.extensions,systemFetch).then(function(targetAddress){
             return "export * from '"+targetAddress.replace(SystemJS.baseURL,"")+"'";    
         })
@@ -48,4 +53,3 @@ function fetch(load, systemFetch) {
 }
 
 module.exports.fetch = fetch;
-
