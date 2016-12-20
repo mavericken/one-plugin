@@ -17,7 +17,8 @@
     "jspm"
   ],
   "files": [
-	"index.js"
+	"index.js",
+	"README.md"
   ]
   "author": "Rick Velde",
   "license": "MIT",
