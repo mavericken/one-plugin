@@ -32,7 +32,7 @@ The config is critical to making this work, so I'll show you right here in the r
 SystemJS.config({
   packages: {
     "app": {
-      "defaultExtension": "one", // Notice that you need a default extension to make this work.  This plugin is hardcoded to use the ".one" extension.
+      "defaultExtension": "one", // Notice that you need a default extension to make this work.
       "meta": {
         "*.ts": { // You include each of your loader configs like normal.
           "loader": "ts"
@@ -43,13 +43,13 @@ SystemJS.config({
         "*.coffee": {
           "loader": "coffee"
         },
-        "*.one": { //
-          "oneOptions": { // The oneOptions tells 
+        "*.one": { // This plugin is hardcoded to use the ".one" extension.
+          "oneOptions": { // The oneOptions tells which file extensions to try, and in what order.
             "extensions": [
-              ".ts",
+              ".ts", // The first extension in your list will not have to incur the cost of a 404 check.
               ".tsx",
               ".js",
-              ".coffee"
+              ".coffee" // To get to .coffee, you will incur 3 404 errors.
             ]
           },
           "loader": "one-plugin.js"
