@@ -1,0 +1,25 @@
+{
+  "name": "one-plugin",
+  "version": "0.0.1",
+  "description": "One SystemJS plugin to rule them all.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavericken/one-plugin.git"
+  },
+  "keywords": [
+    "systemjs",
+    "plugin",
+    "one-plugin",
+    "jspm"
+  ],
+  "author": "Rick Velde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mavericken/one-plugin/issues"
+  },
+  "homepage": "https://github.com/mavericken/one-plugin#readme"
+}
