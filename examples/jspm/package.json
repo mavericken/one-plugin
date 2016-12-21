@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "jspm install",
     "start": "node node_modules/http-server/bin/http-server",
-    "bundle": "jspm bundle app/main"
+    "bundle": "jspm bundle app/main + one-plugin"
   },
   "author": "",
   "license": "MIT",
