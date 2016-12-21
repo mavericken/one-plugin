@@ -18,7 +18,7 @@
     "main": "one-plugin-jspm-example.js",
     "dependencies": {
       "coffee": "github:forresto/system-coffee@master",
-      "one-plugin": "npm:one-plugin@^0.0.1",
+      "one-plugin": "npm:one-plugin@^0.0.2",
       "ts": "github:frankwallis/plugin-typescript@^5.3.1"
     },
     "devDependencies": {
