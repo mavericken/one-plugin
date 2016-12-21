@@ -1,6 +1,6 @@
 {
   "name": "one-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "One SystemJS plugin to rule them all.",
   "main": "index.js",
   "repository": {

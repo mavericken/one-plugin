@@ -61,3 +61,5 @@ SystemJS.config({
   ...
 });
 ```
+
+I also have included an experimental feature. If you use SystemJS in a node environment, try out "nodeFallback: true" under oneOptions. Once the plugin runs out of extensions to try, it will simply try to use node require instead, which might work if you have npm-installed what you were looking for.

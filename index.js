@@ -31,7 +31,8 @@ function fetch(load, systemFetch) {
     var targetPluginName = targetPluginMeta && targetPluginMeta.loader;
     if(targetPluginMeta && !targetPluginName) {
         return systemFetch(load); // when loader is omitted, assume plain javascript
-    } 
+    }
+
     var targetPlugin = null;
     if(!targetPluginName) return Promise.resolve()
         .then(function(){
@@ -39,6 +40,10 @@ function fetch(load, systemFetch) {
             return findFirstValidAddress(load.address,extensions,systemFetch)
         }).then(function(targetAddress){
             return "export * from '"+targetAddress.replace(SystemJS.baseURL,"")+"'";  
+        }).catch(function(){
+            if(oneOptions.nodeFallback) {
+                return "export default SystemJS._nodeRequire && SystemJS._nodeRequire('"+load.address.replace(SystemJS.baseURL,"")+"')"
+            } else return Promise.reject('OnePlugin could not resolve', load)
         });
     else return Promise.resolve()
         .then(function(){return SystemJS.import(targetPluginName)}).then(function(imported){targetPlugin = imported})
