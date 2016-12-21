@@ -4,7 +4,7 @@ SystemJS.config({
     "github:": "jspm_packages/github/"
   },
   browserConfig: {
-    "baseURL": "/"
+    "baseURL": "./"
   },
   devConfig: {
     "map": {
@@ -17,25 +17,24 @@ SystemJS.config({
   },
   packages: {
     "app": {
-      "defaultExtension": "one",
+      "defaultExtension": false,
       "meta": {
-        "*.ts": {
-          "loader": "ts"
-        },
-        "*.tsx": {
-          "loader": "ts"
-        },
-        "*.coffee": {
-          "loader": "coffee"
-        },
-        "*.one": {
+        "*": {
           "oneOptions": {
-            "extensions": [
-              ".ts",
-              ".tsx",
-              ".js",
-              ".coffee"
-            ]
+            "meta": {
+              "*.ts": {
+                "loader": "ts"
+              },
+              "*.tsx": {
+                "loader": "ts"
+              },
+              "*.js":{
+
+              },
+              "*.coffee": {
+                "loader": "coffee"
+              }
+            }
           },
           "loader": "one-plugin.js"
         }
@@ -61,6 +60,7 @@ SystemJS.config({
     "fs": "npm:jspm-nodelibs-fs@0.2.0",
     "module": "npm:jspm-nodelibs-module@0.2.0",
     "net": "npm:jspm-nodelibs-net@0.2.0",
+    "one-plugin": "npm:one-plugin@0.0.1",
     "os": "npm:jspm-nodelibs-os@0.2.0",
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
