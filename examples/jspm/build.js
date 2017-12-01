@@ -143,6 +143,9 @@ System.register('app/main.js', ['app/js-test', 'app/ts-test', 'app/tsx-test', 'a
   return {
     setters: [function (_appJsTest) {}, function (_appTsTest) {}, function (_appTsxTest) {}, function (_appCoffeeTest) {}],
     execute: function () {
+
+      SystemJS.import("app/coffee-test2-for-import");
+
       container = document.getElementById("container");
 
       container.innerHTML += "<p>Hello from main.js</p>";
